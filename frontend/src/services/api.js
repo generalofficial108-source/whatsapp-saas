@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://respectively-conjunction-concerned-wires.trycloudflare.com/admin"
+  baseURL: "https://whatsapp-saas-backend-4c56.onrender.com/admin"
 });
 
 export const getUsers = () => API.get("/users");
