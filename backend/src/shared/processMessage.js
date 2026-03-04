@@ -27,7 +27,7 @@ async function processMessage(message) {
 
   if (message.type === "statuses") return;
 
-  const text = message.text?.body?.toLowerCase();
+  const text = message.text?.body?.toLowerCase().trim();
 
   // =========================
   // START FLOW (English)
