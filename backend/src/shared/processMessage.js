@@ -15,45 +15,39 @@ async function sendWhatsAppMessage(payload) {
 }
 
 async function processMessage(message) {
+
   const from = message.from;
 
-  // 🔥 ALWAYS store incoming RAW message
+  // store incoming message
   store.addMessage(from, {
     from: "user",
     type: message.type,
     raw: message
   });
 
-  // Ignore status messages
   if (message.type === "statuses") return;
 
   const text = message.text?.body?.toLowerCase();
 
   // =========================
-  // 1️⃣ HELLO → BUTTON MESSAGE
+  // START FLOW (English)
   // =========================
-  if (text === "hello") {
+
+  if (text === "english") {
+
     const payload = {
       messaging_product: "whatsapp",
       to: from,
       type: "interactive",
       interactive: {
         type: "button",
-        body: { text: "👋 Welcome to Our Service!" },
+        body: {
+          text: "Dear User 🙏 Have I got your name correctly?"
+        },
         action: {
           buttons: [
-            {
-              type: "reply",
-              reply: { id: "BUY", title: "🛒 Buy" }
-            },
-            {
-              type: "reply",
-              reply: { id: "SELL", title: "💰 Sell" }
-            },
-            {
-              type: "reply",
-              reply: { id: "CONTACT", title: "📞 Contact" }
-            }
+            { type: "reply", reply: { id: "NAME_YES", title: "Yes" } },
+            { type: "reply", reply: { id: "NAME_NO", title: "No" } }
           ]
         }
       }
@@ -61,7 +55,6 @@ async function processMessage(message) {
 
     await sendWhatsAppMessage(payload);
 
-    // 🔥 Store FULL RAW outgoing payload
     store.addMessage(from, {
       from: "bot",
       type: payload.type,
@@ -71,36 +64,199 @@ async function processMessage(message) {
     return;
   }
 
-  // ===================================
-  // 2️⃣ BUTTON REPLY HANDLING
-  // ===================================
-  if (message.type === "interactive" && message.interactive?.button_reply) {
-    const buttonId = message.interactive.button_reply.id;
+  // =========================
+  // BUTTON HANDLING
+  // =========================
 
-    // BUY → LIST MESSAGE
-    if (buttonId === "BUY") {
+  if (message.type === "interactive" && message.interactive?.button_reply) {
+
+    const id = message.interactive.button_reply.id;
+
+    // NAME YES → USER CATEGORY
+    if (id === "NAME_YES") {
+
+      const payload = {
+        messaging_product: "whatsapp",
+        to: from,
+        type: "interactive",
+        interactive: {
+          type: "button",
+          body: {
+            text:
+              "Perfect 🙌 Before we go ahead please select what best describes you."
+          },
+          action: {
+            buttons: [
+              {
+                type: "reply",
+                reply: { id: "DONOR", title: "💰Donor / Visitor" }
+              },
+              {
+                type: "reply",
+                reply: { id: "CUSTOMER", title: "🛍Customer" }
+              },
+              {
+                type: "reply",
+                reply: { id: "VOLUNTEER", title: "🤝Volunteer" }
+              }
+            ]
+          }
+        }
+      };
+
+      await sendWhatsAppMessage(payload);
+      return;
+    }
+
+    // NAME NO → ASK NAME
+    if (id === "NAME_NO") {
+
+      const payload = {
+        messaging_product: "whatsapp",
+        to: from,
+        type: "text",
+        text: {
+          body: "Please type your correct name ✍️"
+        }
+      };
+
+      await sendWhatsAppMessage(payload);
+      return;
+    }
+
+    // =========================
+    // DONOR / VISITOR
+    // =========================
+
+    if (id === "DONOR") {
+
+      const payload = {
+        messaging_product: "whatsapp",
+        to: from,
+        type: "interactive",
+        interactive: {
+          type: "button",
+          body: {
+            text:
+              "How can I assist you today?"
+          },
+          action: {
+            buttons: [
+              {
+                type: "reply",
+                reply: { id: "SHASTRA_DAAN", title: "📚 Shastra Daan" }
+              },
+              {
+                type: "reply",
+                reply: { id: "PURCHASE_BOOKS", title: "🛒 Purchase Books" }
+              },
+              {
+                type: "reply",
+                reply: { id: "ASK_QUERY", title: "❓ Ask Queries" }
+              }
+            ]
+          }
+        }
+      };
+
+      await sendWhatsAppMessage(payload);
+      return;
+    }
+
+    // =========================
+    // SHASTRA DAAN
+    // =========================
+
+    if (id === "SHASTRA_DAAN") {
+
+      const payload = {
+        messaging_product: "whatsapp",
+        to: from,
+        type: "image",
+        image: {
+          link:
+            "https://files.gallabox.com/6700d61271e24a41955f4152/3f8c428f-e286-43eb-bdde-81d1afdc8089-SastraDana2023EnglishBackLowRes.png",
+          caption:
+            "🌸 Help us distribute Bhagavad Gita and Vedic books to people in need."
+        }
+      };
+
+      await sendWhatsAppMessage(payload);
+      return;
+    }
+
+    // =========================
+    // PURCHASE BOOKS
+    // =========================
+
+    if (id === "PURCHASE_BOOKS") {
+
+      const payload = {
+        messaging_product: "whatsapp",
+        to: from,
+        type: "text",
+        text: {
+          body:
+            "Please visit our store:\nhttps://jivadaya.org/shop"
+        }
+      };
+
+      await sendWhatsAppMessage(payload);
+      return;
+    }
+
+    // =========================
+    // ASK QUERIES
+    // =========================
+
+    if (id === "ASK_QUERY") {
+
+      const payload = {
+        messaging_product: "whatsapp",
+        to: from,
+        type: "text",
+        text: {
+          body:
+            "Please send your query. Our team will assist you soon."
+        }
+      };
+
+      await sendWhatsAppMessage(payload);
+      return;
+    }
+
+    // =========================
+    // VOLUNTEER
+    // =========================
+
+    if (id === "VOLUNTEER") {
+
       const payload = {
         messaging_product: "whatsapp",
         to: from,
         type: "interactive",
         interactive: {
           type: "list",
-          body: { text: "🛒 Available Products" },
+          body: {
+            text: "Volunteer Menu"
+          },
           action: {
-            button: "View Products",
+            button: "View Menu",
             sections: [
               {
-                title: "Electronics",
+                title: "General Options",
                 rows: [
                   {
-                    id: "P1",
-                    title: "Laptop ₹50,000",
-                    description: "i7 / 16GB / 512GB"
+                    id: "PRICE_LIST",
+                    title: "Get Book Price List"
                   },
                   {
-                    id: "P2",
-                    title: "Phone ₹25,000",
-                    description: "8GB / 128GB"
+                    id: "PAMPHLET",
+                    title: "Shastra Daan Pamphlet"
+                  },
+                  {
+                    id: "POSTER",
+                    title: "Marathon Poster"
                   }
                 ]
               }
@@ -110,109 +266,87 @@ async function processMessage(message) {
       };
 
       await sendWhatsAppMessage(payload);
-
-      store.addMessage(from, {
-        from: "bot",
-        type: payload.type,
-        raw: payload
-      });
-
       return;
     }
 
-    // SELL → IMAGE MESSAGE
-    if (buttonId === "SELL") {
+  }
+
+  // =========================
+  // LIST REPLY HANDLING
+  // =========================
+
+  if (message.type === "interactive" && message.interactive?.list_reply) {
+
+    const selected = message.interactive.list_reply.id;
+
+    if (selected === "PRICE_LIST") {
+
       const payload = {
         messaging_product: "whatsapp",
         to: from,
         type: "image",
         image: {
-          link: "https://picsum.photos/400",
-          caption: "📦 Send your product details with image."
+          link:
+            "https://files.gallabox.com/6700d61271e24a41955f4152/aadd3893-1ac8-4662-a52c-76293650dd8e-Pricelist.jpeg"
         }
       };
 
       await sendWhatsAppMessage(payload);
-
-      store.addMessage(from, {
-        from: "bot",
-        type: payload.type,
-        raw: payload
-      });
-
       return;
     }
 
-    // CONTACT → TEXT
-    if (buttonId === "CONTACT") {
+    if (selected === "PAMPHLET") {
+
       const payload = {
         messaging_product: "whatsapp",
         to: from,
-        type: "text",
-        text: {
-          body: "📞 Contact us at support@example.com"
+        type: "image",
+        image: {
+          link:
+            "https://files.gallabox.com/6700d61271e24a41955f4152/f1867f84-4631-4261-8dd0-cda50ef82986-SastraDana2023EnglishFrontLowRes.png"
         }
       };
 
       await sendWhatsAppMessage(payload);
-
-      store.addMessage(from, {
-        from: "bot",
-        type: payload.type,
-        raw: payload
-      });
-
       return;
     }
+
+    if (selected === "POSTER") {
+
+      const payload = {
+        messaging_product: "whatsapp",
+        to: from,
+        type: "image",
+        image: {
+          link:
+            "https://files.gallabox.com/6700d61271e24a41955f4152/3d4fec9c-fe27-456b-a6e5-752259feac3c-MarathonFlex4x6inLowRes.png"
+        }
+      };
+
+      await sendWhatsAppMessage(payload);
+      return;
+    }
+
   }
 
-  // ===================================
-  // 3️⃣ LIST REPLY HANDLING
-  // ===================================
-  if (message.type === "interactive" && message.interactive?.list_reply) {
-    const selected = message.interactive.list_reply.title;
+  // =========================
+  // DEFAULT RESPONSE
+  // =========================
 
-    const payload = {
-      messaging_product: "whatsapp",
-      to: from,
-      type: "text",
-      text: {
-        body: `✅ You selected: ${selected}`
-      }
-    };
-
-    await sendWhatsAppMessage(payload);
-
-    store.addMessage(from, {
-      from: "bot",
-      type: payload.type,
-      raw: payload
-    });
-
-    return;
-  }
-
-  // ===================================
-  // 4️⃣ DEFAULT TEXT RESPONSE
-  // ===================================
   if (text) {
+
     const payload = {
       messaging_product: "whatsapp",
       to: from,
       type: "text",
       text: {
-        body: "Please type 'hello' to start."
+        body: "Please type *English* to start."
       }
     };
 
     await sendWhatsAppMessage(payload);
-
-    store.addMessage(from, {
-      from: "bot",
-      type: payload.type,
-      raw: payload
-    });
   }
+
 }
 
 module.exports = processMessage;
