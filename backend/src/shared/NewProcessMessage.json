@@ -1,0 +1,2578 @@
+{
+  "accountId": "6700d61271e24a41955f4152",
+  "name": "English General Flow",
+  "type": "message",
+  "intents": [
+    {
+      "text": "English",
+      "payload": "",
+      "isCaseInsensitive": true,
+      "isRegexMatch": true,
+      "flows": [],
+      "allowCtwaAdOrPost": false
+    }
+  ],
+  "isBeautifiable": true,
+  "variables": [
+    {
+      "label": "communication_language",
+      "name": "communication_language",
+      "type": "object",
+      "sampleValue": {
+        "id": "1",
+        "title": "Button 1"
+      },
+      "_id": "672713b082a70da9f8e0326e",
+      "id": "672713b082a70da9f8e0326e"
+    },
+    {
+      "label": "user_category",
+      "name": "user_category",
+      "type": "object",
+      "sampleValue": {
+        "id": "1",
+        "title": "Button 1"
+      },
+      "_id": "67271c3d947b2c8bdaa8ae10",
+      "id": "67271c3d947b2c8bdaa8ae10"
+    },
+    {
+      "label": "user_choices",
+      "name": "user_choices",
+      "type": "object",
+      "sampleValue": {
+        "id": "1",
+        "title": "Button 1"
+      },
+      "_id": "6727218395058affd5521466",
+      "id": "6727218395058affd5521466"
+    },
+    {
+      "label": "customer_choices",
+      "name": "customer_choices",
+      "type": "object",
+      "sampleValue": {
+        "id": "1",
+        "title": "Button 1"
+      },
+      "_id": "672728f348b5bd2840ae998d",
+      "id": "672728f348b5bd2840ae998d"
+    },
+    {
+      "label": "Queries_choices",
+      "name": "Queries_choices",
+      "type": "object",
+      "sampleValue": {
+        "id": "1",
+        "title": "Button 1"
+      },
+      "_id": "67290cd7edf4b655e19f4bea",
+      "id": "67290cd7edf4b655e19f4bea"
+    },
+    {
+      "label": "Volunteer_choices",
+      "name": "Volunteer_choices",
+      "type": "object",
+      "sampleValue": {
+        "id": "1",
+        "title": "Button 1",
+        "description": "Button 1"
+      },
+      "_id": "67291e349050cf1f981d6b17",
+      "id": "67291e349050cf1f981d6b17"
+    },
+    {
+      "label": "Changed_recepient_Name",
+      "name": "Changed_recepient_Name",
+      "type": "text",
+      "_id": "6742e6f2a32af34232fa1c3a",
+      "id": "6742e6f2a32af34232fa1c3a"
+    }
+  ],
+  "actionsOnFlowComplete": [],
+  "nudgeConfig": {
+    "noAttempts": 2,
+    "delayInMinutes": 5,
+    "message": "Awaiting your prompt response or we will have to **END** this session."
+  },
+  "isNudgeConfig": true,
+  "canReplay": true,
+  "canReplayConfig": {
+    "waitBeforeFlowComplete": 900000
+  },
+  "useFlowLevelDropOff": false,
+  "elements": [
+    {
+      "elementType": "start",
+      "position": {
+        "x": -670,
+        "y": -350
+      },
+      "labelBgPadding": [],
+      "type": "start",
+      "_id": "67270a871e9ca03c2301c809",
+      "id": "67270a871e9ca03c2301c809",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 600,
+        "y": -460
+      },
+      "data": {
+        "text": "Perfect **{{contact.name}}!** 🙌\nBefore we go ahead, I need to know a little about you. 😊 Please select the option that best describes you.\n\nYou are a :👇",
+        "storageVariable": {
+          "label": "user_category",
+          "name": "user_category",
+          "type": "object",
+          "sampleValue": {
+            "id": "1",
+            "title": "Button 1"
+          },
+          "_id": "67271c3d947b2c8bdaa8ae10",
+          "id": "67271c3d947b2c8bdaa8ae10"
+        },
+        "errorMessage": "Kindly enter VALID options from the message button ONLY.",
+        "attempt": 1,
+        "onInvalid": "skip",
+        "optionsType": "static",
+        "options": [
+          {
+            "id": "3ba2eca2-056a-4263-8b5d-c1042103b25b",
+            "title": "💰Donor OR🚶‍Visitor"
+          },
+          {
+            "id": "d18c4a0d-a6ad-4ebc-a098-477e41ca39cf",
+            "title": "🛍Jivadaya Customer"
+          },
+          {
+            "id": "6576dac9-649f-4763-af48-6d7c8e828ed6",
+            "title": "🤝Jivadaya Volunteer"
+          }
+        ],
+        "footer": "",
+        "id": "e02a15b9-93f8-4c08-a10a-3cfa8915776d",
+        "isBlocking": true,
+        "type": "ask_reply_buttons",
+        "responseType": "option",
+        "name": "blk_1SOejg8",
+        "label": "Ask Button Option",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "67271c48e300161cfe67c3c7",
+      "id": "67271c48e300161cfe67c3c7"
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 1100,
+        "y": -680
+      },
+      "data": {
+        "text": "Thank you very much! 🙏 How can I assist you today? 😊 Please choose one of the following options:\n\n**1. Shastra Daan:**\nDonate for Shastra Daan: _Support the distribution of spiritual knowledge._ 📖✨\n\n**2. Purchase Books:**\nPurchase Spiritual Literatures: _Order a selection of sacred books from our Book Store._ 📚🛒\n\n**3. Ask Queries:**\nDonation OR Sales OR Courses Related Queries: _Get help with any donation or book purchase or courses._ ❓💬",
+        "storageVariable": {
+          "label": "user_choices",
+          "name": "user_choices",
+          "type": "object",
+          "sampleValue": {
+            "id": "1",
+            "title": "Button 1"
+          },
+          "_id": "6727218395058affd5521466",
+          "id": "6727218395058affd5521466"
+        },
+        "attempt": 1,
+        "onInvalid": "skip",
+        "optionsType": "static",
+        "options": [
+          {
+            "id": "3ba2eca2-056a-4263-8b5d-c1042103b25b",
+            "title": "📚💖 Shastra Daan"
+          },
+          {
+            "id": "cf10f3ed-e644-4374-a758-a2348d6d9dd5",
+            "title": "🛒📖 Purchase Books"
+          },
+          {
+            "id": "8ff03430-1821-4825-a0f1-5f93b4721727",
+            "title": "❓💬 Ask Queries"
+          }
+        ],
+        "footer": "",
+        "id": "a64d3bf9-f46f-43d1-92b1-85e3fb63e013",
+        "isBlocking": true,
+        "type": "ask_reply_buttons",
+        "responseType": "option",
+        "name": "blk_wC1BZvg",
+        "label": "Ask Button Option",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "67272198e300161cfe67ffd0",
+      "id": "67272198e300161cfe67ffd0"
+    },
+    {
+      "elementType": "connection",
+      "source": "67271c48e300161cfe67c3c7",
+      "target": "67272198e300161cfe67ffd0",
+      "sourceHandle": "67271c48e300161cfe67c3c7-source-0",
+      "targetHandle": "67272198e300161cfe67ffd0-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6727219948b5bd2840ae4b3d",
+      "id": "6727219948b5bd2840ae4b3d",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2030,
+        "y": -880
+      },
+      "data": {
+        "blockId": "672725da0211f911700f8f1d",
+        "id": "dfa0f300-63d6-40f3-9024-98bff35917c9",
+        "type": "jump_to",
+        "isBlocking": false,
+        "isSameFlow": false,
+        "flowId": "6727226083cdacf5d497a74f",
+        "name": "blk_TEdlLwE",
+        "label": "Jump to",
+        "flow": {
+          "name": "Shastra Daan Flow",
+          "status": "in_draft",
+          "id": "6727226083cdacf5d497a74f"
+        }
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "672722e583cdacf5d497acf3",
+      "id": "672722e583cdacf5d497acf3"
+    },
+    {
+      "elementType": "connection",
+      "source": "67272198e300161cfe67ffd0",
+      "target": "672722e583cdacf5d497acf3",
+      "sourceHandle": "67272198e300161cfe67ffd0-source-0",
+      "targetHandle": "672722e583cdacf5d497acf3-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "672722e795058affd55225fa",
+      "id": "672722e795058affd55225fa",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": -590,
+        "y": -60
+      },
+      "data": {
+        "text": "Welcome back! 🙌\nPlease let me know how I can help you today? 😊",
+        "storageVariable": {
+          "label": "customer_choices",
+          "name": "customer_choices",
+          "type": "object",
+          "sampleValue": {
+            "id": "1",
+            "title": "Button 1"
+          },
+          "_id": "672728f348b5bd2840ae998d",
+          "id": "672728f348b5bd2840ae998d"
+        },
+        "attempt": 1,
+        "onInvalid": "skip",
+        "optionsType": "static",
+        "options": [
+          {
+            "id": "3ba2eca2-056a-4263-8b5d-c1042103b25b",
+            "title": "🛒 Purchase Books"
+          },
+          {
+            "id": "bd53656c-4577-40d1-858f-88c690719a8e",
+            "title": "🚚 Delivery/❓Queries"
+          },
+          {
+            "id": "3385e67e-218d-4fae-a01c-9ecb774b8251",
+            "title": "✍️ Join Courses"
+          }
+        ],
+        "footer": "",
+        "id": "59585973-d122-4e21-b063-3d21e78e52ae",
+        "isBlocking": true,
+        "type": "ask_reply_buttons",
+        "responseType": "option",
+        "name": "blk_VgANzSI",
+        "label": "Ask Button Option",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6727295cc464bf3c64f1f650",
+      "id": "6727295cc464bf3c64f1f650"
+    },
+    {
+      "elementType": "connection",
+      "source": "67271c48e300161cfe67c3c7",
+      "target": "6727295cc464bf3c64f1f650",
+      "sourceHandle": "67271c48e300161cfe67c3c7-source-1",
+      "targetHandle": "6727295cc464bf3c64f1f650-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6727295d83cdacf5d49801d8",
+      "id": "6727295d83cdacf5d49801d8",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": -160,
+        "y": 1400
+      },
+      "data": {
+        "text": "Let me know how can I help you today?",
+        "storageVariable": {
+          "label": "Volunteer_choices",
+          "name": "Volunteer_choices",
+          "type": "object",
+          "sampleValue": {
+            "id": "1",
+            "title": "Button 1",
+            "description": "Button 1"
+          },
+          "_id": "67291e349050cf1f981d6b17",
+          "id": "67291e349050cf1f981d6b17"
+        },
+        "attempt": 1,
+        "onInvalid": "skip",
+        "menuButtonText": "View Menu",
+        "optionsType": "static",
+        "options": [
+          {
+            "title": "General Options",
+            "rows": [
+              {
+                "id": "f42040ad-e817-4d87-9d3a-c6b6e3cb2661",
+                "title": "Get Book Price List",
+                "description": "Get here the updated prices of Srila Prabhupada books."
+              },
+              {
+                "id": "e47805cb-c3ff-40a8-a3d2-7557946b804b",
+                "title": "Shastra Daan Pamphlet",
+                "description": "Get here a standard donation collection message for sending to donors"
+              },
+              {
+                "id": "1f47b8b1-4853-43a3-8ee4-1db8d03779c0",
+                "title": "Kumbha Mela Gita Daan",
+                "description": "Get here a standard donation collection message for sending to donors"
+              },
+              {
+                "id": "2718ce4c-45c4-48f1-8078-573207add10f",
+                "title": "Marathon'24 Poster & DP",
+                "description": "Get MarathonPoster & DP which you can put as status/post on social media"
+              },
+              {
+                "id": "8a16aa3a-ab48-4521-b028-03b812ee0218",
+                "title": "Temple Sankirtan Score",
+                "description": "Get latest scores updates of Jivadaya ISKCON Pune (NVCC)"
+              },
+              {
+                "id": "a52896f8-006f-43cb-a17e-0d375c9ec17a",
+                "title": "Purchase Books Online",
+                "description": "Purchase Books for yourself OR your near & dear ones right in WhatsApp"
+              },
+              {
+                "id": "c6a4a84b-f033-4a55-a5b3-d800028234d9",
+                "title": "Ask Queries",
+                "description": "Get all your queries answered right here"
+              }
+            ]
+          },
+          {
+            "title": "My Account",
+            "rows": [
+              {
+                "id": "0a6c8d1e-f61b-43bc-8b45-6d61fc6540f7",
+                "title": "My Account",
+                "description": "Login to your registered account and get more specific details"
+              }
+            ]
+          }
+        ],
+        "footer": "",
+        "id": "4177dd6c-3c0e-4f8a-b803-76111eca3e20",
+        "isBlocking": true,
+        "type": "ask_list",
+        "responseType": "option",
+        "name": "blk_HlJZeor",
+        "label": "Ask List Option",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "67291e391c1c7e9b556aaeaa",
+      "id": "67291e391c1c7e9b556aaeaa"
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2140,
+        "y": -60
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/aadd3893-1ac8-4662-a52c-76293650dd8e-Pricelist.jpeg",
+        "mediaType": "image",
+        "caption": "_**Marathon 2025 Rate List for ISKCON Pune (NVCC)**_\n\nCheck out our Complete Ratelist on jivadaya.org/pricelist\n\n_Visit us on_ https://jivadaya.org\n\n#Marathon25\n#LiveToGive\n#Jivadaya",
+        "id": "e3e2cf49-9552-4918-ab17-f68d07a718bf",
+        "isBlocking": false,
+        "type": "send_media",
+        "contentType": "",
+        "name": "blk_CI3lynZ",
+        "label": "Send Media",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "67291fe71d969785454ac5c7",
+      "id": "67291fe71d969785454ac5c7"
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 1630,
+        "y": -20
+      },
+      "data": {
+        "blockId": "6731cc00afe49778f85b9f09",
+        "id": "dbc17572-36b8-4523-8b5d-8effcfda87f8",
+        "type": "jump_to",
+        "isBlocking": false,
+        "isSameFlow": false,
+        "flowId": "6731c7ceef79400d48174b8f",
+        "name": "blk_kooXb2b",
+        "label": "Jump to",
+        "flow": {
+          "name": "Ask Queries Flow",
+          "status": "in_draft",
+          "id": "6731c7ceef79400d48174b8f"
+        }
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "672a15b0419fe7a9825999e1",
+      "id": "672a15b0419fe7a9825999e1"
+    },
+    {
+      "elementType": "connection",
+      "source": "6727295cc464bf3c64f1f650",
+      "target": "672a15b0419fe7a9825999e1",
+      "sourceHandle": "6727295cc464bf3c64f1f650-source-1",
+      "targetHandle": "672a15b0419fe7a9825999e1-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "672a15b100e085f1250dd386",
+      "id": "672a15b100e085f1250dd386",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2100,
+        "y": -220
+      },
+      "data": {
+        "text": "Sorry for the inconvenience! 🙏\nWe're developing this feature and will soon integrate our Online Book Store right here on WhatsApp 📚✨\n\nMeanwhile, please visit our store at:\n👉 https://jivadaya.org/shop\n\nand place your order there 😊",
+        "id": "9f50bdbc-d715-4ad4-95b4-a7200c319066",
+        "type": "send_text",
+        "isBlocking": false,
+        "name": "blk_5DN5frG",
+        "label": "Send Text",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "672a1dcf0e291280214d5df8",
+      "id": "672a1dcf0e291280214d5df8"
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2080,
+        "y": -400
+      },
+      "data": {
+        "blockId": "6731cc00afe49778f85b9f09",
+        "id": "5bfe637b-0dd7-452f-8b39-9eff13a65d4c",
+        "type": "jump_to",
+        "isBlocking": false,
+        "isSameFlow": false,
+        "flowId": "6731c7ceef79400d48174b8f",
+        "label": "Jump to",
+        "name": "blk_VLAY9Fw",
+        "flow": {
+          "name": "Ask Queries Flow",
+          "status": "in_draft",
+          "id": "6731c7ceef79400d48174b8f"
+        }
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6731d287e6714328574d4fb7",
+      "id": "6731d287e6714328574d4fb7"
+    },
+    {
+      "elementType": "connection",
+      "source": "67272198e300161cfe67ffd0",
+      "target": "6731d287e6714328574d4fb7",
+      "sourceHandle": "67272198e300161cfe67ffd0-source-2",
+      "targetHandle": "6731d287e6714328574d4fb7-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6731d2871dcd943e061f5d74",
+      "id": "6731d2871dcd943e061f5d74",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": -470,
+        "y": -360
+      },
+      "data": {
+        "text": "Dear {{recipient.name}}, One small query before we go ahead.🙏 Have I got your name correctly? 😊",
+        "attempt": 1,
+        "onInvalid": "skip",
+        "optionsType": "static",
+        "options": [
+          {
+            "id": "09a003d0-84c4-4197-8aa1-f32fad416874",
+            "title": "Yes"
+          },
+          {
+            "id": "d8b5a42b-772a-42b4-bafe-bdfa399a5483",
+            "title": "No"
+          }
+        ],
+        "id": "ce021669-ce83-41f5-a3ce-237888986fa1",
+        "isBlocking": true,
+        "type": "ask_reply_buttons",
+        "responseType": "option",
+        "name": "blk_kuLjMRv",
+        "label": "Ask Button Option",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6742a2b4298636c1cf82b54a",
+      "id": "6742a2b4298636c1cf82b54a"
+    },
+    {
+      "elementType": "connection",
+      "source": "6742a2b4298636c1cf82b54a",
+      "target": "67271c48e300161cfe67c3c7",
+      "sourceHandle": "6742a2b4298636c1cf82b54a-source-0",
+      "targetHandle": "67271c48e300161cfe67c3c7-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6742a2c33369bd5c973fef5b",
+      "id": "6742a2c33369bd5c973fef5b",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": -90,
+        "y": -180
+      },
+      "data": {
+        "text": "Please type your **Correct Name.** ✍️😊",
+        "storageVariable": {
+          "label": "Changed_recepient_Name",
+          "name": "Changed_recepient_Name",
+          "type": "text",
+          "_id": "6742e6f2a32af34232fa1c3a",
+          "id": "6742e6f2a32af34232fa1c3a"
+        },
+        "attempt": 1,
+        "onInvalid": "skip",
+        "id": "98129b4a-48c5-4a88-813a-eec126197930",
+        "isBlocking": true,
+        "responseType": "text",
+        "type": "ask_text",
+        "name": "blk_85tYdsK",
+        "askAs": "text",
+        "label": "Ask Text",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6742a365c29e8fc15ff17f47",
+      "id": "6742a365c29e8fc15ff17f47"
+    },
+    {
+      "elementType": "connection",
+      "source": "6742a2b4298636c1cf82b54a",
+      "target": "6742a365c29e8fc15ff17f47",
+      "sourceHandle": "6742a2b4298636c1cf82b54a-source-1",
+      "targetHandle": "6742a365c29e8fc15ff17f47-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6742a36539e6b08f46d895f3",
+      "id": "6742a36539e6b08f46d895f3",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 250,
+        "y": -140
+      },
+      "data": {
+        "id": "6d2032ec-1b1d-4174-a70f-545f69782439",
+        "isBlocking": false,
+        "type": "update_contact_fields",
+        "action": {
+          "name": "Update Contact Name",
+          "operations": [
+            "Replace",
+            "Add If Empty"
+          ],
+          "hasValue": true,
+          "fact": {
+            "label": "Contact Name",
+            "property": "name",
+            "isArrayType": false,
+            "module": "Contact",
+            "namespace": "Gallabox",
+            "fieldId": "6700d61271e24a41955f4155",
+            "type": "text"
+          },
+          "processor": {
+            "name": "onUpdateContactAction"
+          },
+          "config": {
+            "type": "bot",
+            "bot": {
+              "allowDynamicResponse": true
+            }
+          }
+        },
+        "value": "{{variables.Changed_recepient_Name}}",
+        "operation": "Replace",
+        "name": "blk_3DTcQK5",
+        "label": "Update Contact Fields",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6742a3ac71506fb3cd877de1",
+      "id": "6742a3ac71506fb3cd877de1"
+    },
+    {
+      "elementType": "connection",
+      "source": "6742a365c29e8fc15ff17f47",
+      "target": "6742a3ac71506fb3cd877de1",
+      "sourceHandle": "6742a365c29e8fc15ff17f47-source",
+      "targetHandle": "6742a3ac71506fb3cd877de1-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6742a3adf61ea6796cfd7b6e",
+      "id": "6742a3adf61ea6796cfd7b6e",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "6742a3ac71506fb3cd877de1",
+      "target": "67271c48e300161cfe67c3c7",
+      "sourceHandle": "6742a3ac71506fb3cd877de1-source",
+      "targetHandle": "67271c48e300161cfe67c3c7-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6742a3cbf61ea6796cfd7c14",
+      "id": "6742a3cbf61ea6796cfd7c14",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 3410,
+        "y": 720
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/3f8c428f-e286-43eb-bdde-81d1afdc8089-SastraDana2023EnglishBackLowRes.png",
+        "mediaType": "image",
+        "caption": "_**🌸 Help Us Spread the Wisdom of the Bhagavad Gita & Vedic Texts 🌸**_\n\nHare Krishna! 🙏\nWe are on a mission to distribute Bhagavad Gita and other Vedic texts to those in need—especially children, poor villagers, and those without access to these sacred teachings. 📖✨\n\nThe Bhagavad Gita is not just a book—it’s a guide to life, wisdom, and peace. By reading it, individuals can find strength, clarity, and a deeper connection to their true self. 🙌💫\n\nBy donating these books, you are helping illuminate hearts and minds with divine knowledge. Your contribution can change lives, bringing hope and spiritual growth to those who need it most. 💖🌱\n\nEvery little bit counts! Together, we can make a difference! 🌺\n\nFor donating please click on donate.jivadaya.org 🙏\n\n*Yours in service to Lord Krishna & humanity*\n_**Jivadaya ISKCON Pune**_",
+        "id": "763d718a-4a03-4f79-8ce1-ea87f836550e",
+        "isBlocking": false,
+        "type": "send_media",
+        "contentType": "",
+        "name": "blk_JtcB195",
+        "label": "Send Media",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6743545a0cd005b305596148",
+      "id": "6743545a0cd005b305596148"
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2110,
+        "y": 940
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/3d4fec9c-fe27-456b-a6e5-752259feac3c-MarathonFlex4x6inLowRes.png",
+        "mediaType": "image",
+        "caption": "**MARATHON'25** - 💖\n\n_\"The more such literatures are **read** and **distributed**, the more **auspicity** will be there in the world._\n[Letter to Lilavati - Sydney, 26 March 1972] 📚✨\n\nKindly Tag your book Distribution photos, stories etc on ▶️ YouTube, 📸 Instagram, 🔵 Facebook with following Hashtags.\n\n#LiveToGive\n#Marathon25\n#Jivadaya\n--------------------------\nTo stay updated 🔔 follow **Jivadaya 🟢 WhatsApp Channel** on https://whatsapp.com/channel/0029VaUVzOH8aKvQAbZ2fx2H\n",
+        "id": "0da249ea-9949-45ec-84a9-3cdac9d43625",
+        "isBlocking": false,
+        "type": "send_media",
+        "filename": "Marathon Flex (4 x 6 in)_LowRes.png",
+        "contentType": "image/png",
+        "name": "blk_36aGAoo",
+        "label": "Send Media",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "674820880b53c1963316485d",
+      "id": "674820880b53c1963316485d"
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2630,
+        "y": 160
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/ba4f2e25-3468-45f8-96d5-9c47cd118fd4-Marathon24Logo.png",
+        "mediaType": "image",
+        "caption": "#AbKiBaar400KPaar\nJivadaya WA ChatBot: https://wame.pro/jivadaya",
+        "id": "68267135-e12c-4a09-99b9-b1904308a52c",
+        "isBlocking": false,
+        "type": "send_media",
+        "contentType": "",
+        "name": "blk_QYzyjrG",
+        "label": "Send Media",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6748228dbad15e13a1c39f2e",
+      "id": "6748228dbad15e13a1c39f2e"
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 1730,
+        "y": 140
+      },
+      "data": {
+        "blockId": "672f4e00878614b80e0be0f4",
+        "id": "bdf9c7ca-df2b-4cf5-9794-fdcd7df0e684",
+        "type": "jump_to",
+        "isBlocking": false,
+        "isSameFlow": false,
+        "flowId": "672f4c30878614b80e0bb5e8",
+        "label": "Jump to",
+        "name": "blk_kvWcNps",
+        "flow": {
+          "name": "Course Registration Flow",
+          "status": "in_draft",
+          "id": "672f4c30878614b80e0bb5e8"
+        }
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "67484651bad15e13a1c83ea1",
+      "id": "67484651bad15e13a1c83ea1"
+    },
+    {
+      "elementType": "connection",
+      "source": "6727295cc464bf3c64f1f650",
+      "target": "67484651bad15e13a1c83ea1",
+      "sourceHandle": "6727295cc464bf3c64f1f650-source-2",
+      "targetHandle": "67484651bad15e13a1c83ea1-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "67484651c7582e9388013a13",
+      "id": "67484651c7582e9388013a13",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": -420,
+        "y": -650
+      },
+      "data": {
+        "id": "6689e8c2-5300-4456-99ab-42461ba73ad6",
+        "isBlocking": false,
+        "type": "condition",
+        "rules": {
+          "all": [
+            {
+              "operator": "isNotEmpty",
+              "value": "",
+              "fact": {
+                "label": "Changed_recepient_Name",
+                "name": "Changed_recepient_Name",
+                "type": "text",
+                "_id": "6742e6f2a32af34232fa1c3a",
+                "id": "6742e6f2a32af34232fa1c3a"
+              }
+            }
+          ]
+        },
+        "name": "blk_iBUgXFl",
+        "label": "Condition",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "67484c7fcff7bc0c1ce68373",
+      "id": "67484c7fcff7bc0c1ce68373"
+    },
+    {
+      "elementType": "connection",
+      "source": "67270a871e9ca03c2301c809",
+      "target": "6742a2b4298636c1cf82b54a",
+      "sourceHandle": "67270a871e9ca03c2301c809-source",
+      "targetHandle": "6742a2b4298636c1cf82b54a-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "67484e11f4ee2c04f7f1b97d",
+      "id": "67484e11f4ee2c04f7f1b97d",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 1310,
+        "y": 240
+      },
+      "data": {
+        "blockId": "6749baf6906058aef0af5d42",
+        "id": "c42bbe4b-0b44-4ead-b8b4-2758bcb704e5",
+        "type": "jump_to",
+        "isBlocking": false,
+        "isSameFlow": false,
+        "flowId": "6749a2bc3aa82695d6a25d0a",
+        "label": "Jump to",
+        "name": "blk_HKKAQgp",
+        "flow": {
+          "name": "My Account",
+          "status": "in_draft",
+          "id": "6749a2bc3aa82695d6a25d0a"
+        }
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6749bf62fb973e55fb8c0172",
+      "id": "6749bf62fb973e55fb8c0172"
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 3940,
+        "y": 550
+      },
+      "data": {
+        "text": "For getting this message template with your UNIQUE link & Name, please select **My Account** in the Main Menu of Jivadaya Volunteer & login. 🔑💻",
+        "id": "a7ed4306-4f83-4083-b9d9-1c4922df84b5",
+        "type": "send_text",
+        "isBlocking": false,
+        "name": "blk_qhwNSAR",
+        "label": "Send Text",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6749c355737e4dc3a95a8d5d",
+      "id": "6749c355737e4dc3a95a8d5d"
+    },
+    {
+      "elementType": "connection",
+      "source": "6743545a0cd005b305596148",
+      "target": "6749c355737e4dc3a95a8d5d",
+      "sourceHandle": "6743545a0cd005b305596148-source",
+      "targetHandle": "6749c355737e4dc3a95a8d5d-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6749c366a26ee097f5b0edba",
+      "id": "6749c366a26ee097f5b0edba",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 340,
+        "y": 160
+      },
+      "data": {
+        "text": "You are one of the truly dedicated & selfless soul, distributing the compassion of Lord Chaitanya to all. 🙏💖\n\nLet me know how I can help you today? 😊✨",
+        "storageVariable": {
+          "label": "Volunteer_choices",
+          "name": "Volunteer_choices",
+          "type": "object",
+          "sampleValue": {
+            "id": "1",
+            "title": "Button 1",
+            "description": "Button 1"
+          },
+          "_id": "67291e349050cf1f981d6b17",
+          "id": "67291e349050cf1f981d6b17"
+        },
+        "attempt": 1,
+        "onInvalid": "skip",
+        "menuButtonText": "View Menu",
+        "optionsType": "static",
+        "options": [
+          {
+            "title": "My Account",
+            "rows": [
+              {
+                "id": "0a6c8d1e-f61b-43bc-8b45-6d61fc6540f7",
+                "title": "👤 My Account",
+                "description": "Login 🔑 to your registered account and get more specific details"
+              }
+            ]
+          },
+          {
+            "title": "General Options",
+            "rows": [
+              {
+                "id": "3bf45151-2f62-4fd1-962a-ea9f0424c931",
+                "title": "🏷️ Get Book Price List",
+                "description": "Get here the updated prices of Srila Prabhupada books."
+              },
+              {
+                "id": "7eea4312-0485-4f81-aec4-67c4b55d7066",
+                "title": "🛒 Purchase Books Online",
+                "description": "Purchase Books for yourself OR your near & dear ones right in WhatsApp"
+              },
+              {
+                "id": "42f770b8-bf65-4ca5-b80f-7c7a29cc1587",
+                "title": "❓ Ask Queries",
+                "description": "Get all your queries answered right here"
+              }
+            ]
+          },
+          {
+            "title": "Media",
+            "rows": [
+              {
+                "id": "024aa705-6b33-45ea-89da-b812da5bac54",
+                "title": "✨ Pamphlets",
+                "description": "Get here a readymade donation collection message for sending to donors"
+              },
+              {
+                "id": "53df1ad7-1feb-46ad-92b3-7d3808fcf6dc",
+                "title": "🖼️ Posters",
+                "description": "Get here printable size attractive poster/flexes"
+              },
+              {
+                "id": "344850c7-c5f6-402e-b276-b3856a42839f",
+                "title": "📖 Brochures",
+                "description": "Brochures to show to well-wishers or donors or big shots"
+              },
+              {
+                "id": "f9c36428-f3df-48be-a795-25380b6c5547",
+                "title": "📜 Inspirational Quotes",
+                "description": "Inspirational Quotes for Book Distribution to inspire your congregation"
+              },
+              {
+                "id": "03fdf2a4-7d91-403d-8be5-20e36a4a0b35",
+                "title": "🎬 Inspirational Videos",
+                "description": "Inspirational Videos for Book Distribution to inspire your congregation"
+              }
+            ]
+          }
+        ],
+        "id": "be90845b-4627-470d-92ae-91455a8a8276",
+        "isBlocking": true,
+        "type": "ask_list",
+        "responseType": "option",
+        "name": "blk_bF2LJUN",
+        "label": "Ask List Option",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "674a47a76fd42e758b473991",
+      "id": "674a47a76fd42e758b473991"
+    },
+    {
+      "elementType": "connection",
+      "source": "674a47a76fd42e758b473991",
+      "target": "6749bf62fb973e55fb8c0172",
+      "sourceHandle": "674a47a76fd42e758b473991-source-0",
+      "targetHandle": "6749bf62fb973e55fb8c0172-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "674a487b9a6f7e123ffbb3fb",
+      "id": "674a487b9a6f7e123ffbb3fb",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "674a47a76fd42e758b473991",
+      "target": "67291fe71d969785454ac5c7",
+      "sourceHandle": "674a47a76fd42e758b473991-source-1",
+      "targetHandle": "67291fe71d969785454ac5c7-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "674a494cdb4af613e96118c1",
+      "id": "674a494cdb4af613e96118c1",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "67271c48e300161cfe67c3c7",
+      "target": "674a47a76fd42e758b473991",
+      "sourceHandle": "67271c48e300161cfe67c3c7-source-2",
+      "targetHandle": "674a47a76fd42e758b473991-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "674a4988359854a2e5b8da13",
+      "id": "674a4988359854a2e5b8da13",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 4840,
+        "y": 930
+      },
+      "data": {
+        "blockId": "674d2b193178c091dfec3f18",
+        "id": "9d68576c-dc87-4e00-b459-c0fddf077a88",
+        "type": "jump_to",
+        "isBlocking": false,
+        "isSameFlow": false,
+        "flowId": "674d2aa3d529d66403625bdd",
+        "label": "Jump to",
+        "name": "blk_Y5BhoqV",
+        "flow": {
+          "name": "Feedback & Resolve Conversation",
+          "status": "in_draft",
+          "id": "674d2aa3d529d66403625bdd"
+        }
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "674de12d95ed28df67a3761f",
+      "id": "674de12d95ed28df67a3761f"
+    },
+    {
+      "elementType": "connection",
+      "source": "6749c355737e4dc3a95a8d5d",
+      "target": "674de12d95ed28df67a3761f",
+      "sourceHandle": "6749c355737e4dc3a95a8d5d-source",
+      "targetHandle": "674de12d95ed28df67a3761f-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "674de198d529d6640374b2d0",
+      "id": "674de198d529d6640374b2d0",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 3070,
+        "y": 380
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/762f9f1c-ff83-4bea-8bca-6885a6435dbd-MarathonLogoBaatengeToBachenge.png",
+        "mediaType": "image",
+        "caption": "#BaatengeToBachenge\nJivadaya WA ChatBot: https://wame.pro/jivadaya",
+        "id": "218d30a5-48d0-498e-b18e-9e5b15d33530",
+        "isBlocking": false,
+        "type": "send_media",
+        "filename": "Marathon Logo_BaatengeToBachenge.png",
+        "contentType": "image/png",
+        "label": "Send Media",
+        "name": "blk_3HNxoH0",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6752d95589ad05a057dd0c95",
+      "id": "6752d95589ad05a057dd0c95"
+    },
+    {
+      "elementType": "connection",
+      "source": "6748228dbad15e13a1c39f2e",
+      "target": "6752d95589ad05a057dd0c95",
+      "sourceHandle": "6748228dbad15e13a1c39f2e-source",
+      "targetHandle": "6752d95589ad05a057dd0c95-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6752d95664d55a852690aeb3",
+      "id": "6752d95664d55a852690aeb3",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "6752d95589ad05a057dd0c95",
+      "target": "674de12d95ed28df67a3761f",
+      "sourceHandle": "6752d95589ad05a057dd0c95-source",
+      "targetHandle": "674de12d95ed28df67a3761f-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6752d96389ad05a057dd0e99",
+      "id": "6752d96389ad05a057dd0e99",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 400,
+        "y": 1050
+      },
+      "data": {
+        "text": "Here is a repository of all materials required for an effective Book Distribution. Select one by clicking \"View Repository\"",
+        "attempt": 1,
+        "onInvalid": "skip",
+        "menuButtonText": "View Repository",
+        "optionsType": "static",
+        "options": [
+          {
+            "title": "",
+            "rows": [
+              {
+                "id": "e37db34b-aed1-4c73-9f6f-75910ee7f7d8",
+                "title": "Vedic Encylopedia",
+                "description": "A Brochure of Srila Prabhupada Books"
+              },
+              {
+                "id": "d75e15d6-e5ac-4ea7-af18-4e63eb14959b",
+                "title": "Book Reviews",
+                "description": "A book of Reviews made by prominent figures"
+              },
+              {
+                "id": "3f41af6e-60ad-4551-9f2b-c47056fa5dbd",
+                "title": "Tips for BD"
+              },
+              {
+                "id": "12331efa-9d91-4295-85ea-33e4accd1a66",
+                "title": "Sankirtan Stories"
+              },
+              {
+                "id": "97270b5b-b675-4d41-8761-41a936ee6742",
+                "title": "BD Inspiron",
+                "description": "Get YouTube links for short inspirational videos for Book Distribution"
+              }
+            ]
+          }
+        ],
+        "header": {
+          "text": "Sankirtan Tit-Bits",
+          "type": "text"
+        },
+        "id": "96b3c593-1c4f-48bb-a011-545029f518b6",
+        "isBlocking": true,
+        "type": "ask_list",
+        "responseType": "option",
+        "name": "blk_BrcukGd",
+        "label": "Ask List Option",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "67566f2d44ca210e665cfdcd",
+      "id": "67566f2d44ca210e665cfdcd"
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 1460,
+        "y": 1780
+      },
+      "data": {
+        "text": "Hare krishna !\nWe are currently working on adding content to this section. In the meantime, we encourage you to explore the other features of the chatbot.",
+        "id": "72520336-1c55-4300-8cfb-3e23773b2bae",
+        "type": "send_text",
+        "isBlocking": false,
+        "label": "Send Text",
+        "name": "blk_hgvyOj4",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6758031cf40f2ff6b0d73e33",
+      "id": "6758031cf40f2ff6b0d73e33"
+    },
+    {
+      "elementType": "connection",
+      "source": "67566f2d44ca210e665cfdcd",
+      "target": "6758031cf40f2ff6b0d73e33",
+      "sourceHandle": "67566f2d44ca210e665cfdcd-source-0",
+      "targetHandle": "6758031cf40f2ff6b0d73e33-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6758031dc46e39e08ad7946c",
+      "id": "6758031dc46e39e08ad7946c",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "67566f2d44ca210e665cfdcd",
+      "target": "6758031cf40f2ff6b0d73e33",
+      "sourceHandle": "67566f2d44ca210e665cfdcd-source-1",
+      "targetHandle": "6758031cf40f2ff6b0d73e33-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6758032098dfb9b8c6c952b3",
+      "id": "6758032098dfb9b8c6c952b3",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "67566f2d44ca210e665cfdcd",
+      "target": "6758031cf40f2ff6b0d73e33",
+      "sourceHandle": "67566f2d44ca210e665cfdcd-source-2",
+      "targetHandle": "6758031cf40f2ff6b0d73e33-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6758032320de2f7167e38afc",
+      "id": "6758032320de2f7167e38afc",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "67566f2d44ca210e665cfdcd",
+      "target": "6758031cf40f2ff6b0d73e33",
+      "sourceHandle": "67566f2d44ca210e665cfdcd-source-3",
+      "targetHandle": "6758031cf40f2ff6b0d73e33-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "67580324a0fda6aac58095be",
+      "id": "67580324a0fda6aac58095be",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "67566f2d44ca210e665cfdcd",
+      "target": "6758031cf40f2ff6b0d73e33",
+      "sourceHandle": "67566f2d44ca210e665cfdcd-source-4",
+      "targetHandle": "6758031cf40f2ff6b0d73e33-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6758032a98dfb9b8c6c953b2",
+      "id": "6758032a98dfb9b8c6c953b2",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 1990,
+        "y": 400
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/f1867f84-4631-4261-8dd0-cda50ef82986-SastraDana2023EnglishFrontLowRes.png",
+        "mediaType": "image",
+        "id": "afe5fa8e-beae-455b-b3b8-9544a47a8fa2",
+        "isBlocking": false,
+        "type": "send_media",
+        "label": "Send Media",
+        "name": "blk_7Zm4uJR",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "69280b4c7d68511fb45299c3",
+      "id": "69280b4c7d68511fb45299c3"
+    },
+    {
+      "elementType": "connection",
+      "source": "69280b4c7d68511fb45299c3",
+      "target": "6743545a0cd005b305596148",
+      "sourceHandle": "69280b4c7d68511fb45299c3-source",
+      "targetHandle": "6743545a0cd005b305596148-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "69280b59b5fdf2749764bf1e",
+      "id": "69280b59b5fdf2749764bf1e",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "674a47a76fd42e758b473991",
+      "target": "672a15b0419fe7a9825999e1",
+      "sourceHandle": "674a47a76fd42e758b473991-source-3",
+      "targetHandle": "672a15b0419fe7a9825999e1-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "692816abec11b37d65c3da29",
+      "id": "692816abec11b37d65c3da29",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 1480,
+        "y": 1310
+      },
+      "data": {
+        "text": "We have 2 types of brochures available 📄✨\nPlease choose which one you would prefer 👇",
+        "attempt": 1,
+        "onInvalid": "skip",
+        "menuButtonText": "Choose",
+        "optionsType": "static",
+        "options": [
+          {
+            "title": "",
+            "rows": [
+              {
+                "id": "3e66336d-23c1-4af8-b4dd-09183c9ff9b3",
+                "title": "✨Value Education Contest",
+                "description": "Get here a standard donation collection message for sending to donors"
+              },
+              {
+                "id": "2f6b5906-9074-415e-937e-7599a8845bdd",
+                "title": "📖 Vedic Encylopedia",
+                "description": "Get here Ashadi Ekadasi donation collection message for sending to donor"
+              }
+            ]
+          }
+        ],
+        "id": "21bc70ce-9dd6-4343-a2f4-d9c95e0feede",
+        "isBlocking": true,
+        "type": "ask_list",
+        "responseType": "option",
+        "name": "blk_HMBAS6Z",
+        "label": "Ask List Option",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "692822407d68511fb45676b6",
+      "id": "692822407d68511fb45676b6"
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 1550,
+        "y": 560
+      },
+      "data": {
+        "text": "We have 2 types of pamphlets available 📄✨\nPlease choose which one you would prefer 👇",
+        "attempt": 1,
+        "onInvalid": "skip",
+        "menuButtonText": "Choose",
+        "optionsType": "static",
+        "options": [
+          {
+            "title": "",
+            "rows": [
+              {
+                "id": "7faae10e-fa4b-4348-aec5-862968f099b7",
+                "title": "✨ Shastra Daan Pamphlet",
+                "description": "Get here a standard donation collection message for sending to donors"
+              },
+              {
+                "id": "083982d4-0877-47d3-8da7-532f016e008a",
+                "title": "🌿 Ashadi Ekadasi Daan",
+                "description": "Get here Ashadi Ekadasi donation collection message for sending to donor"
+              }
+            ]
+          }
+        ],
+        "id": "d31cb818-b034-42f5-94e3-0ae01bc0daae",
+        "isBlocking": true,
+        "type": "ask_list",
+        "responseType": "option",
+        "label": "Ask List Option",
+        "name": "blk_SfuJJqz",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "692827ca97a3ea7856f7ec4c",
+      "id": "692827ca97a3ea7856f7ec4c"
+    },
+    {
+      "elementType": "connection",
+      "source": "674a47a76fd42e758b473991",
+      "target": "692827ca97a3ea7856f7ec4c",
+      "sourceHandle": "674a47a76fd42e758b473991-source-4",
+      "targetHandle": "692827ca97a3ea7856f7ec4c-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "692827ca47c6ee7e3d413ce9",
+      "id": "692827ca47c6ee7e3d413ce9",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "692827ca97a3ea7856f7ec4c",
+      "target": "69280b4c7d68511fb45299c3",
+      "sourceHandle": "692827ca97a3ea7856f7ec4c-source-0",
+      "targetHandle": "69280b4c7d68511fb45299c3-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "692827d4b5fdf274976947fe",
+      "id": "692827d4b5fdf274976947fe",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 3030,
+        "y": 780
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/94616fc5-e2d4-4026-9f81-d3c77260e064-AsadhiShastraDaanFlex3x5.png",
+        "mediaType": "image",
+        "caption": "_**🌸 Help Us Spread the Wisdom of the Bhagavad Gita & Vedic Texts This Ashadhi Ekadashi 🌸**_\n\nHare Krishna! 🙏\nWe are on a sacred mission to distribute *Bhagavad Gita* and other Vedic texts to *Varkaris* during _Dindi Yatra,_ starting from *9 July 2026 to 25 July 2026,* culminating on **Ashadhi Ekadashi (25 July 2026).** 📖✨\n\nThe *Bhagavad Gita* is not just a book—it’s a guide to life, wisdom, and peace. 🙌💫This year, we have pledged to **distribute 25,000 Gitas** to devotees and pilgrims, bringing *divine knowledge and spiritual upliftment* to hearts along the pilgrimage. 💖🌱\n\nBy donating these books, you are helping illuminate hearts and minds with divine knowledge. Your contribution can change lives, bringing hope and spiritual growth to those who need it most. 💖🌱\n\nEvery little bit counts! Together, we can make a difference! 🌺\n\nFor donating please click on https://donate.jivadaya.org 🙏\n\n*Yours in service to Lord Krishna & humanity*\n_**Jivadaya ISKCON Pune**_",
+        "id": "94d2bc8f-af36-4115-9276-a1c0412b0eeb",
+        "isBlocking": false,
+        "type": "send_media",
+        "filename": "Asadhi Shastra Daan Flex (3 x 5).png",
+        "contentType": "image/png",
+        "label": "Send Media",
+        "name": "blk_LaK1LQt",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "69282c1947c6ee7e3d4200e6",
+      "id": "69282c1947c6ee7e3d4200e6"
+    },
+    {
+      "elementType": "connection",
+      "source": "692827ca97a3ea7856f7ec4c",
+      "target": "69282c1947c6ee7e3d4200e6",
+      "sourceHandle": "692827ca97a3ea7856f7ec4c-source-1",
+      "targetHandle": "69282c1947c6ee7e3d4200e6-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "69282c1a260a36f9e30f25ed",
+      "id": "69282c1a260a36f9e30f25ed",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 1530,
+        "y": 920
+      },
+      "data": {
+        "text": "📌 Select the type of Poster required",
+        "attempt": 1,
+        "onInvalid": "skip",
+        "menuButtonText": "Choose",
+        "optionsType": "static",
+        "options": [
+          {
+            "title": "",
+            "rows": [
+              {
+                "id": "c7689f10-74eb-4e34-8a5c-79cc36cd422e",
+                "title": "Jivadaya Related",
+                "description": ""
+              },
+              {
+                "id": "e9deff36-960f-44ed-a9cb-31c1a5d70fb9",
+                "title": "Marathon Related"
+              },
+              {
+                "id": "b57c2f34-e6bf-4fb3-be10-05cfd9024d06",
+                "title": "Bhagavad Gita Related"
+              },
+              {
+                "id": "ecc33e41-e6b0-42f0-9714-a915e4741206",
+                "title": "Srimad Bhagavat Related"
+              }
+            ]
+          }
+        ],
+        "id": "e0623569-ca34-4523-bef8-8f0880aaeb63",
+        "isBlocking": true,
+        "type": "ask_list",
+        "responseType": "option",
+        "name": "blk_rYhh3eS",
+        "label": "Ask List Option",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "69282d1f648e7866d5214666",
+      "id": "69282d1f648e7866d5214666"
+    },
+    {
+      "elementType": "connection",
+      "source": "674a47a76fd42e758b473991",
+      "target": "69282d1f648e7866d5214666",
+      "sourceHandle": "674a47a76fd42e758b473991-source-5",
+      "targetHandle": "69282d1f648e7866d5214666-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "69282d20ecba08d08857bb4d",
+      "id": "69282d20ecba08d08857bb4d",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2070,
+        "y": 1500
+      },
+      "data": {
+        "text": "📌 Choose the type of Poster required",
+        "attempt": 1,
+        "onInvalid": "skip",
+        "optionsType": "static",
+        "options": [
+          {
+            "id": "4beeedca-1449-44a8-914f-6957a1a662ac",
+            "title": "What if one book ?"
+          },
+          {
+            "id": "12d08692-a599-41f3-8b49-30fda0d1dd27",
+            "title": "Finding Help in Gita"
+          }
+        ],
+        "id": "0ad3de0e-1a1f-414e-986c-5772a81b4ef2",
+        "isBlocking": true,
+        "type": "ask_reply_buttons",
+        "responseType": "option",
+        "label": "Ask Button Option",
+        "name": "blk_Pct3oZ2",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "69282f5de95ea07176ed58bc",
+      "id": "69282f5de95ea07176ed58bc"
+    },
+    {
+      "elementType": "connection",
+      "source": "69282d1f648e7866d5214666",
+      "target": "674820880b53c1963316485d",
+      "sourceHandle": "69282d1f648e7866d5214666-source-1",
+      "targetHandle": "674820880b53c1963316485d-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "69282f8b97a3ea7856f92f2a",
+      "id": "69282f8b97a3ea7856f92f2a",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "69282d1f648e7866d5214666",
+      "target": "69282f5de95ea07176ed58bc",
+      "sourceHandle": "69282d1f648e7866d5214666-source-2",
+      "targetHandle": "69282f5de95ea07176ed58bc-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "69282f9947c6ee7e3d42af92",
+      "id": "69282f9947c6ee7e3d42af92",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2910,
+        "y": 1640
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/72cf5762-9fbb-45e2-87f5-29c9170ac457-Whatifonebooksaiditall4x6EngLowRes.png",
+        "mediaType": "image",
+        "caption": "What if One book said it all",
+        "id": "93ac364f-632e-4125-9ec6-7995852e6e6c",
+        "isBlocking": false,
+        "type": "send_media",
+        "contentType": "",
+        "name": "blk_V63bJnc",
+        "label": "Send Media",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "692831874fab165698f29b75",
+      "id": "692831874fab165698f29b75"
+    },
+    {
+      "elementType": "connection",
+      "source": "69282f5de95ea07176ed58bc",
+      "target": "692831874fab165698f29b75",
+      "sourceHandle": "69282f5de95ea07176ed58bc-source-0",
+      "targetHandle": "692831874fab165698f29b75-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6928318897a3ea7856f989ab",
+      "id": "6928318897a3ea7856f989ab",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 3590,
+        "y": 1680
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/9e6817a0-877f-406f-b47f-6a1e240a2888-Whatifonebooksaiditall4x6MarathiLowRes.png",
+        "mediaType": "image",
+        "caption": "जर एकाच पुस्तकाने हे सर्व सांगितलं तर...",
+        "id": "1aac970f-f9d4-4278-8f16-716d63e980b1",
+        "isBlocking": false,
+        "type": "send_media",
+        "filename": "What if one book said it all (4x6)_Marathi_LowRes.png",
+        "contentType": "image/png",
+        "label": "Send Media",
+        "name": "blk_URmKAFw",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "692831c4836c3e84e507c79b",
+      "id": "692831c4836c3e84e507c79b"
+    },
+    {
+      "elementType": "connection",
+      "source": "692831874fab165698f29b75",
+      "target": "692831c4836c3e84e507c79b",
+      "sourceHandle": "692831874fab165698f29b75-source",
+      "targetHandle": "692831c4836c3e84e507c79b-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "692831c54fab165698f2a3d8",
+      "id": "692831c54fab165698f2a3d8",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2110,
+        "y": 1760
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/e290b771-bfee-4644-942a-d9a986ab0bf6-SBisLordKrishnaHimselfLowRes.png",
+        "mediaType": "image",
+        "caption": "📚 Śrīmad-Bhāgavatam is non-different from the Supreme Lord Lord Krishna.",
+        "id": "572911b3-af86-4cfe-8663-53d1a8b78a57",
+        "isBlocking": false,
+        "type": "send_media",
+        "filename": "SB is Lord Krishna Himself_LowRes.png",
+        "contentType": "image/png",
+        "label": "Send Media",
+        "name": "blk_Wu3bgJQ",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6928326db5fdf274976aef2c",
+      "id": "6928326db5fdf274976aef2c"
+    },
+    {
+      "elementType": "connection",
+      "source": "69282d1f648e7866d5214666",
+      "target": "6928326db5fdf274976aef2c",
+      "sourceHandle": "69282d1f648e7866d5214666-source-3",
+      "targetHandle": "6928326db5fdf274976aef2c-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6928326decba08d08858832f",
+      "id": "6928326decba08d08858832f",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2890,
+        "y": 1840
+      },
+      "data": {
+        "text": "**More Śrīmad-Bhāgavatam Posters in English**\n🔗 Visit the link below 👇\nhttps://drive.google.com/drive/u/0/folders/1agh5yXUpsQ093DIKH8cHzRc4m6nO5nwJ ",
+        "id": "c34c6d7a-32a8-4b2d-9a15-9b6d42083015",
+        "type": "send_text",
+        "isBlocking": false,
+        "label": "Send Text",
+        "name": "blk_ee5uG1p",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "692832c5648e7866d5224739",
+      "id": "692832c5648e7866d5224739"
+    },
+    {
+      "elementType": "connection",
+      "source": "692832c5648e7866d5224739",
+      "target": "674de12d95ed28df67a3761f",
+      "sourceHandle": "692832c5648e7866d5224739-source",
+      "targetHandle": "674de12d95ed28df67a3761f-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "69283603b5fdf274976b8b52",
+      "id": "69283603b5fdf274976b8b52",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "674a47a76fd42e758b473991",
+      "target": "6758031cf40f2ff6b0d73e33",
+      "sourceHandle": "674a47a76fd42e758b473991-source-7",
+      "targetHandle": "6758031cf40f2ff6b0d73e33-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "69283635ecba08d088591a2d",
+      "id": "69283635ecba08d088591a2d",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "674a47a76fd42e758b473991",
+      "target": "6758031cf40f2ff6b0d73e33",
+      "sourceHandle": "674a47a76fd42e758b473991-source-8",
+      "targetHandle": "6758031cf40f2ff6b0d73e33-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "69283638ecba08d088591add",
+      "id": "69283638ecba08d088591add",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "6758031cf40f2ff6b0d73e33",
+      "target": "674de12d95ed28df67a3761f",
+      "sourceHandle": "6758031cf40f2ff6b0d73e33-source",
+      "targetHandle": "674de12d95ed28df67a3761f-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "692836527d68511fb45a0f5b",
+      "id": "692836527d68511fb45a0f5b",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "69282c1947c6ee7e3d4200e6",
+      "target": "6749c355737e4dc3a95a8d5d",
+      "sourceHandle": "69282c1947c6ee7e3d4200e6-source",
+      "targetHandle": "6749c355737e4dc3a95a8d5d-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6928721331245e1d5ac7ec62",
+      "id": "6928721331245e1d5ac7ec62",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 3810,
+        "y": 1240
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/9dfbe899-5d07-418e-989d-2c22d80af713-FindingHelpinGita65x5LowRes.png",
+        "mediaType": "image",
+        "caption": "**Finding Help In Bhagavad Gita** - Your true friend & saviour at the darkest hour of your life",
+        "id": "890d7fb6-577d-4593-95a1-ab7828f379cc",
+        "isBlocking": false,
+        "type": "send_media",
+        "filename": "Finding Help in Gita (6.5x5)_LowRes.png",
+        "contentType": "image/png",
+        "label": "Send Media",
+        "name": "blk_HuPrP3F",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "692872cae2629974b0de2c00",
+      "id": "692872cae2629974b0de2c00"
+    },
+    {
+      "elementType": "connection",
+      "source": "69282f5de95ea07176ed58bc",
+      "target": "692872cae2629974b0de2c00",
+      "sourceHandle": "69282f5de95ea07176ed58bc-source-1",
+      "targetHandle": "692872cae2629974b0de2c00-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "692872cae2629974b0de2c04",
+      "id": "692872cae2629974b0de2c04",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2250,
+        "y": 640
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/06e195a5-00c8-4dce-a315-7e54ac9e01fc-JivadayaWingsLowRes.png",
+        "mediaType": "image",
+        "caption": "_**Wings of Jivadaya**_\nWish to contribute?? Apply on https://jivadaya.org/jobs",
+        "id": "ce114045-59cb-46a8-a191-27d1bb6384ee",
+        "isBlocking": false,
+        "type": "send_media",
+        "filename": "Jivadaya Wings_LowRes.png",
+        "contentType": "image/png",
+        "label": "Send Media",
+        "name": "blk_r5dcGmL",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "69287389191f803494be2f98",
+      "id": "69287389191f803494be2f98"
+    },
+    {
+      "elementType": "connection",
+      "source": "69282d1f648e7866d5214666",
+      "target": "69287389191f803494be2f98",
+      "sourceHandle": "69282d1f648e7866d5214666-source-0",
+      "targetHandle": "69287389191f803494be2f98-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6928738aecba08d088601697",
+      "id": "6928738aecba08d088601697",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "674a47a76fd42e758b473991",
+      "target": "692822407d68511fb45676b6",
+      "sourceHandle": "674a47a76fd42e758b473991-source-6",
+      "targetHandle": "692822407d68511fb45676b6-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "692874503978bc1c0efd963a",
+      "id": "692874503978bc1c0efd963a",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2970,
+        "y": 40
+      },
+      "data": {
+        "text": "For getting your UNIQUE link for online ordering, please select **My Account** in the Menu of Jivadaya Volunteer & then login. 🔑💻",
+        "id": "f3e7fdf8-554d-4fc7-bc4d-ff6b67e40654",
+        "type": "send_text",
+        "isBlocking": false,
+        "label": "Send Text",
+        "name": "blk_nK29ZLn",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "692874f9a386618bd4298c83",
+      "id": "692874f9a386618bd4298c83"
+    },
+    {
+      "elementType": "connection",
+      "source": "67291fe71d969785454ac5c7",
+      "target": "692874f9a386618bd4298c83",
+      "sourceHandle": "67291fe71d969785454ac5c7-source",
+      "targetHandle": "692874f9a386618bd4298c83-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "692874fbc4d0c5d73c031801",
+      "id": "692874fbc4d0c5d73c031801",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "692874f9a386618bd4298c83",
+      "target": "674de12d95ed28df67a3761f",
+      "sourceHandle": "692874f9a386618bd4298c83-source",
+      "targetHandle": "674de12d95ed28df67a3761f-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6928751847c6ee7e3d4ac1e3",
+      "id": "6928751847c6ee7e3d4ac1e3",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 4070,
+        "y": 1700
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/018dc968-3a03-4743-8607-f096e6a21fb7-Whatifonebooksaiditall4x6.jpg",
+        "mediaType": "document",
+        "id": "7a2c259d-df17-4d41-946b-9ddf7f5e67bc",
+        "isBlocking": false,
+        "type": "send_media",
+        "filename": "What if one book said it all (4x6).jpg",
+        "contentType": "image/jpeg",
+        "label": "Send Media",
+        "name": "blk_mwlogdg",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "69295b8ac2d8ef1dcbb1a1f9",
+      "id": "69295b8ac2d8ef1dcbb1a1f9"
+    },
+    {
+      "elementType": "connection",
+      "source": "692831c4836c3e84e507c79b",
+      "target": "69295b8ac2d8ef1dcbb1a1f9",
+      "sourceHandle": "692831c4836c3e84e507c79b-source",
+      "targetHandle": "69295b8ac2d8ef1dcbb1a1f9-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "69295b8b8e169a6b9cee3bbe",
+      "id": "69295b8b8e169a6b9cee3bbe",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "69295b8ac2d8ef1dcbb1a1f9",
+      "target": "674de12d95ed28df67a3761f",
+      "sourceHandle": "69295b8ac2d8ef1dcbb1a1f9-source",
+      "targetHandle": "674de12d95ed28df67a3761f-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6929733a0cfc98cc461e8e63",
+      "id": "6929733a0cfc98cc461e8e63",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2490,
+        "y": 1800
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/220e2d99-6799-4098-9aa0-731be6179b05-SBisSSRVC4x6.jpg",
+        "mediaType": "document",
+        "id": "b837c800-1c14-4724-b14b-cc8fdfc9ad11",
+        "isBlocking": false,
+        "type": "send_media",
+        "filename": "SB is SSRVC (4x6).jpg",
+        "contentType": "image/jpeg",
+        "label": "Send Media",
+        "name": "blk_xkMNIYF",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6929737d8355da90a11f5f85",
+      "id": "6929737d8355da90a11f5f85"
+    },
+    {
+      "elementType": "connection",
+      "source": "6928326db5fdf274976aef2c",
+      "target": "6929737d8355da90a11f5f85",
+      "sourceHandle": "6928326db5fdf274976aef2c-source",
+      "targetHandle": "6929737d8355da90a11f5f85-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6929737e8355da90a11f5f90",
+      "id": "6929737e8355da90a11f5f90",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "6929737d8355da90a11f5f85",
+      "target": "692832c5648e7866d5224739",
+      "sourceHandle": "6929737d8355da90a11f5f85-source",
+      "targetHandle": "692832c5648e7866d5224739-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6929738450948d079c1e36f9",
+      "id": "6929738450948d079c1e36f9",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 4270,
+        "y": 1160
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/398ec975-b218-4934-9af4-6810b2a39685-FindingHelpinGita65x5.png",
+        "mediaType": "document",
+        "id": "714337fd-17d7-4897-bba0-e6888e4d0bcb",
+        "isBlocking": false,
+        "type": "send_media",
+        "filename": "Finding Help in Gita (6.5x5).png",
+        "contentType": "image/png",
+        "label": "Send Media",
+        "name": "blk_xC5Ueww",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "692973ca8e169a6b9cf1083e",
+      "id": "692973ca8e169a6b9cf1083e"
+    },
+    {
+      "elementType": "connection",
+      "source": "692872cae2629974b0de2c00",
+      "target": "692973ca8e169a6b9cf1083e",
+      "sourceHandle": "692872cae2629974b0de2c00-source",
+      "targetHandle": "692973ca8e169a6b9cf1083e-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "692973cbc2d8ef1dcbb4b48a",
+      "id": "692973cbc2d8ef1dcbb4b48a",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "692973ca8e169a6b9cf1083e",
+      "target": "674de12d95ed28df67a3761f",
+      "sourceHandle": "692973ca8e169a6b9cf1083e-source",
+      "targetHandle": "674de12d95ed28df67a3761f-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "692973d48355da90a11f6a80",
+      "id": "692973d48355da90a11f6a80",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2670,
+        "y": 1240
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/30d7be74-8f28-441e-87cc-7fe2e81ae4c5-NewVECEnglishBrochure20251compressed.pdf",
+        "mediaType": "document",
+        "id": "d7bba5a4-fa02-418d-96cc-88444e2185c9",
+        "isBlocking": false,
+        "type": "send_media",
+        "filename": "New VEC English Brochure 2025 (1)-compressed.pdf",
+        "contentType": "application/pdf",
+        "label": "Send Media",
+        "name": "blk_8t0gr0V",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "6929779f3c934a2bfa97ddbd",
+      "id": "6929779f3c934a2bfa97ddbd"
+    },
+    {
+      "elementType": "connection",
+      "source": "692822407d68511fb45676b6",
+      "target": "6929779f3c934a2bfa97ddbd",
+      "sourceHandle": "692822407d68511fb45676b6-source-0",
+      "targetHandle": "6929779f3c934a2bfa97ddbd-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "6929779f220d8b3f7e562e19",
+      "id": "6929779f220d8b3f7e562e19",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "6929779f3c934a2bfa97ddbd",
+      "target": "674de12d95ed28df67a3761f",
+      "sourceHandle": "6929779f3c934a2bfa97ddbd-source",
+      "targetHandle": "674de12d95ed28df67a3761f-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "692977c38355da90a11feeec",
+      "id": "692977c38355da90a11feeec",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2650,
+        "y": 1420
+      },
+      "data": {
+        "url": "https://files.gallabox.com/6700d61271e24a41955f4152/f4691f24-773c-4f00-af16-7d4d8dc3246c-VEPBrochurefinalcompressed.pdf",
+        "mediaType": "document",
+        "id": "017f7f15-7a89-45ad-8935-d6e159be1b6c",
+        "isBlocking": false,
+        "type": "send_media",
+        "filename": "V EP Brochure final-compressed.pdf",
+        "contentType": "application/pdf",
+        "label": "Send Media",
+        "name": "blk_DFvmwmu",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "69297a5390bfd40f54538177",
+      "id": "69297a5390bfd40f54538177"
+    },
+    {
+      "elementType": "connection",
+      "source": "692822407d68511fb45676b6",
+      "target": "69297a5390bfd40f54538177",
+      "sourceHandle": "692822407d68511fb45676b6-source-1",
+      "targetHandle": "69297a5390bfd40f54538177-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "69297a5314964505f82f67cd",
+      "id": "69297a5314964505f82f67cd",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "block",
+      "position": {
+        "x": 2560,
+        "y": 470
+      },
+      "data": {
+        "buttonType": "cta_url",
+        "ctaURL": {
+          "url": "https://jivadaya.org/shop",
+          "displayText": "Website"
+        },
+        "text": "Sorry for the inconvenience! 🙏\nWe're developing this feature and will soon integrate our Online Book Store right here on WhatsApp 📚✨\n\nMeanwhile, please visit our store at:\n👉 https://jivadaya.org/shop\n\nand place your order there 😊",
+        "id": "47bf8e67-3fff-4929-8cdf-eae5dd73da30",
+        "isBlocking": false,
+        "type": "send_reply_buttons",
+        "label": "Send Button Option",
+        "name": "blk_MRm9Fwk",
+        "flow": null
+      },
+      "version": "v1",
+      "labelBgPadding": [],
+      "type": "block",
+      "_id": "694f8eb0f7def6ed53f2515d",
+      "id": "694f8eb0f7def6ed53f2515d"
+    },
+    {
+      "elementType": "connection",
+      "source": "67272198e300161cfe67ffd0",
+      "target": "694f8eb0f7def6ed53f2515d",
+      "sourceHandle": "67272198e300161cfe67ffd0-source-1",
+      "targetHandle": "694f8eb0f7def6ed53f2515d-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "694f8ed4495575c1a856034c",
+      "id": "694f8ed4495575c1a856034c",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "674a47a76fd42e758b473991",
+      "target": "694f8eb0f7def6ed53f2515d",
+      "sourceHandle": "674a47a76fd42e758b473991-source-2",
+      "targetHandle": "694f8eb0f7def6ed53f2515d-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "694f8eeda8d966d64d9eaca7",
+      "id": "694f8eeda8d966d64d9eaca7",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "6727295cc464bf3c64f1f650",
+      "target": "694f8eb0f7def6ed53f2515d",
+      "sourceHandle": "6727295cc464bf3c64f1f650-source-0",
+      "targetHandle": "694f8eb0f7def6ed53f2515d-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "694f8efce04129a771c2a170",
+      "id": "694f8efce04129a771c2a170",
+      "data": {
+        "flow": null
+      }
+    },
+    {
+      "elementType": "connection",
+      "source": "694f8eb0f7def6ed53f2515d",
+      "target": "674de12d95ed28df67a3761f",
+      "sourceHandle": "694f8eb0f7def6ed53f2515d-source",
+      "targetHandle": "674de12d95ed28df67a3761f-target",
+      "labelBgPadding": [],
+      "animated": true,
+      "type": "connection",
+      "style": {
+        "stroke": "#0BC5EA"
+      },
+      "_id": "694f8f16e2dc0970f9ba02b0",
+      "id": "694f8f16e2dc0970f9ba02b0",
+      "data": {
+        "flow": null
+      }
+    }
+  ]
+}
